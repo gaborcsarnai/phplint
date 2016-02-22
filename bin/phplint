@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../src/functional.php';
+require_once __DIR__ . '/../src/PHPLint.php';
+
+if ($argc < 2) {
+    if (posix_isatty(STDIN)) {
+        error_log('Usage: phplint <filename>; or you can pipe some file to it');
+        exit(1);
+    }
+    $filename = 'php://stdin';
+} else {
+    $filename = $argv[1];
+}
+
+if (($errors = phplint($filename)) === FALSE) {
+    // We already got a file open error in the log.
+    exit(1);
+} elseif (count($errors)) {
+    foreach ($errors as $error) {
+        error_log(sprintf('%s: line %d, col %d, %s.', $filename, $error[1], $error[2], $error[0]));
+    }
+    exit(1);
+} else {
+    echo 'No errors found in ', $filename, PHP_EOL;
+}
