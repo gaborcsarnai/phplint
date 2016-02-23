@@ -18,7 +18,7 @@ class PHPLint {
      */
     protected $rules = [
         [
-            'Put a space after each control structure keyword',
+            'Expected space after control structure keyword',
             '/(.*(if|else|elseif|switch|for|foreach|while))\(/'
         ],
         [

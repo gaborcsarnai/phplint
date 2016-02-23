@@ -69,11 +69,11 @@ class PHPLintTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($linter->checkLine(''), []);
         $this->assertSame(
             $linter->checkLine('if('),
-            [['Put a space after each control structure keyword', 1, 3]]
+            [['Expected space after control structure keyword', 1, 3]]
         );
         $this->assertSame(
             $linter->checkLine('if(', 5),
-            [['Put a space after each control structure keyword', 5, 3]]
+            [['Expected space after control structure keyword', 5, 3]]
         );
     }
 
