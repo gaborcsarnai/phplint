@@ -19,27 +19,27 @@ class PHPLint {
     protected $rules = [
         [
             'Expected space after control structure keyword',
-            '/(.*(if|else|elseif|switch|for|foreach|while))\(/'
+            '/^(.*(if|else|elseif|switch|for|foreach|while))\(/'
         ],
         [
             'Unexpected space after \'(\'',
-            '/(.*\()\s[^\n]/'
+            '/^(.*\()\s[^\n]/'
         ],
         [
             'Unexpected space before \')\'',
-            '/(.*[^\s]+)\s\)/'
+            '/^(.*[^\s]+)\s\)/'
         ],
         [
             '25 characters should be long enough for a variable name',
-            '/(.*)\$[a-z_]\w{25,}\b/i'
+            '/^(.*)\$[a-z_]\w{25,}\b/i'
         ],
         [
             'Use alternative syntax for control structures when mixing outputs',
-            '/(.*)\{\s*\?\>/'
+            '/^(.*)\{\s*\?\>/'
         ],
         [
             'Use alternative syntax for control structures when mixing outputs',
-            '/(.*\<\?php\s+)\}/'
+            '/^(.*\<\?php\s+)\}/'
         ],
     ];
 
