@@ -1,6 +1,6 @@
 <?php
 /**
- * Checks file against quality criteria. This function is a rapper around the
+ * Checks file against quality criteria. This function is a wrapper around the
  * {@see PHPLint} class.
  *
  * @param string $filename  Filename to process.
