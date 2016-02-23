@@ -41,6 +41,10 @@ class PHPLint {
             'Use alternative syntax for control structures when mixing outputs',
             '/^(.*\<\?php\s+)\}/'
         ],
+        [
+            'Don\'t use short opening tags',
+            '/^(.*)\<\?(?!\=|php)/'
+        ]
     ];
 
     /**
