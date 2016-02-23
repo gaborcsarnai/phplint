@@ -19,7 +19,7 @@ class PHPLint {
     protected $rules = [
         [
             'Expected space after control structure keyword',
-            '/^(.*(if|else|elseif|switch|for|foreach|while))\(/'
+            '/^(.*(if|else|elseif|switch|for|foreach|while))\(/i'
         ],
         [
             'Unexpected space after \'(\'',
@@ -39,11 +39,11 @@ class PHPLint {
         ],
         [
             'Use alternative syntax for control structures when mixing outputs',
-            '/^(.*\<\?php\s+)\}/'
+            '/^(.*\<\?php\s+)\}/i'
         ],
         [
             'Don\'t use short opening tags',
-            '/^(.*)\<\?(?!\=|php)/'
+            '/^(.*)\<\?(?!\=|php)/i'
         ]
     ];
 
